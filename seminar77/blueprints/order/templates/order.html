@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('bp_order.static', filename='order.css') }}" type="text/css">
+</head>
+<body>
+    <div class="order">
+        <center>
+            <a href="{{ url_for('main_menu') }}">Вернуться в главное меню</a>
+            <h2>Корзина</h2>
+        </center>
+        <div class="order__wrapper">
+            <div class="order__products">
+                <h2>Все товары для покупки</h2>
+
+            </div>
+            <div class="order__basket">
+                <h2>Ваша корзина</h2>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

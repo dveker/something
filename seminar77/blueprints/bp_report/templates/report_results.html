@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты отчёта</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <center>
+            <h2>{{ prod_title }}</h2>
+            <a href="/report/view" class="btn btn-secondary">Новый поиск</a>
+            <a href="/report/" class="btn btn-primary">Меню отчётов</a>
+            <a href="/" class="btn btn-primary">Главное меню</a>
+        </center>
+
+        <div class="mt-4">
+            {% if products %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID отчёта</th>
+                            <th>Месяц</th>
+                            <th>Год</th>
+                            <th>Количество товаров</th>
+                            <th>Общая стоимость</th>
+                            <th>Дата создания</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for report in products %}
+                        <tr>
+                            <td>{{ report.rep_id }}</td>
+                            <td>{{ report.p_month }}</td>
+                            <td>{{ report.p_year }}</td>
+                            <td>{{ report.p_amount }}</td>
+                            <td>{{ report.p_value }} руб.</td>
+                            <td>{{ report.created_at }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-warning">
+                    <p>Отчёты не найдены</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

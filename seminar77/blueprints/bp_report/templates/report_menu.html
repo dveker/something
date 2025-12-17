@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с отчётами</title>
+</head>
+<body>
+    <center>
+        <h2>Меню работы с отчётами</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p style="color: {% if category == 'error' %}red{% else %}green{% endif %};">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <p>Роль: <strong>{{ user_group }}</strong></p>
+
+        <ul style="list-style-type:none">
+            {% if permissions.can_create %}
+            <li><a href="/report/create">Создать отчёт</a></li>
+            {% endif %}
+
+            {% if permissions.can_view %}
+            <li><a href="/report/view">Просмотреть отчёты</a></li>
+            {% endif %}
+
+            <li><a href="/">Главное меню</a></li>
+        </ul>
+
+        {% if not permissions.can_create and not permissions.can_view %}
+        <p>У вас нет прав для работы с отчетами</p>
+        {% endif %}
+    </center>
+</body>
+</html>

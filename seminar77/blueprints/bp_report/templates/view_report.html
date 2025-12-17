@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр отчётов</title>
+</head>
+<body>
+    <center>
+        <h2>Просмотр отчётов</h2>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <div>
+                <label>Месяц отчёта:</label>
+                <input type="text" name="month" required>
+            </div>
+            <div>
+                <label>Год отчёта:</label>
+                <input type="text" name="year" required>
+            </div>
+            <br>
+            <input type="submit" value="Показать отчёты">
+        </form>
+        <br>
+        <a href="/report/">Назад к отчётам</a>
+    </center>
+</body>
+</html>

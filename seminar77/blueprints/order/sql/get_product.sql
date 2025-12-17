@@ -1,0 +1,1 @@
+SELECT prod_name, prod_price FROM product WHERE prod_id = %(prod_id)s

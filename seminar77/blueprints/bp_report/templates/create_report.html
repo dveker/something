@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание отчёта</title>
+</head>
+<body>
+<center>
+    <h2>Создание отчёта</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p style="color: {% if category == 'error' %}red{% else %}green{% endif %};">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <p>
+        <form action="" method="POST">
+            <div class="form-input">
+                <label for="month">Месяц отчёта (1-12):</label>
+                <input type="number" name="month" id="month" min="1" max="12" required>
+            </div>
+
+            <div class="form-input">
+                <label for="year">Год отчёта:</label>
+                <input type="number" name="year" id="year" min="2020" max="2030" required>
+            </div>
+
+            <div class="form-input">
+                <label for="amount">Количество товаров:</label>
+                <input type="number" name="amount" id="amount" min="0" required>
+            </div>
+
+            <div class="form-input">
+                <label for="value">Общая стоимость:</label>
+                <input type="number" name="value" id="value" min="0" step="0.01" required>
+            </div>
+            <br><br>
+
+            <input type="submit" value="Создать отчёт">
+        </form>
+    </p>
+    <a href="/report/">Назад к отчётам</a>
+</center>
+</body>
+</html>

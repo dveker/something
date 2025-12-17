@@ -1,0 +1,1 @@
+INSERT INTO orders (user_id, total_amount) VALUES (%s, %s)

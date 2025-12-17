@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главное меню</title>
+</head>
+<body>
+    <center>
+        <h2>Главное меню</h2>
+        <p>Вы вошли как: <strong>{{ user_group }}</strong></p>
+
+        <ul style="list-style-type:none">
+            <li><a href="/order">Оформить заказ</a></li>
+            <li><a href="/report">Работа с отчётами</a></li>
+
+            {% if permissions.can_query %}
+            <li><a href="/query">Выполнить запрос</a></li>
+            {% endif %}
+
+            <li><a href="/logout">Выйти</a></li>
+        </ul>
+    </center>
+</body>
+</html>

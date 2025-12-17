@@ -1,0 +1,13 @@
+.order {
+    .order__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order__products,
+    .order__basket {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

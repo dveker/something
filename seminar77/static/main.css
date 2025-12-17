@@ -1,0 +1,30 @@
+.order {
+    .order__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .order__products,
+    .order__basket {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+    }
+
+    .order__basket {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #dee2e6;
+    }
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+    margin: 2px;
+}
